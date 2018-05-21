@@ -19,7 +19,7 @@ Route::get('/reduce/{id}', 'ProductController@getReduceByOne')->name('product.re
 
 Route::get('/remove/{id}', 'ProductController@getRemoveItem')->name('product.remove');
 
-Route::get('/shoppingCart', 'ProductController@getCart')->name('product.shoppingCart');
+Route::get('/shopping-cart', 'ProductController@getCart')->name('product.shoppingCart');
 
 Route::get('/checkout', 'ProductController@getCheckout')->name('checkout');
 

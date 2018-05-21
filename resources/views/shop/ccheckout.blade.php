@@ -106,5 +106,5 @@ Laravel Shopping Cart
 
 @section('scripts')
   <script src="https://js.stripe.com/v3/"></script>
-  <script src="/js/app.js"></script>
+  <script src="{{ URL::to('/js/app.js') }}"></script>
 @endsection
