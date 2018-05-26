@@ -15,7 +15,6 @@ class Cart {
   }
 
   public function add($item, $id) {
-    
     $storedItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
     
     if($this->items) {

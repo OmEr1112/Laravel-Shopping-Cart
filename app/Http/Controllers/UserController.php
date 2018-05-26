@@ -12,9 +12,13 @@ class UserController extends Controller
     $this->middleware('auth', ['only' => ['getProfile', 'getLogout']]);
   }
 
+  
+
   public function getSignup() {
     return view('user.signup');
   }
+
+
 
   public function postSignup() {
     $this->validate(request(), [
@@ -40,9 +44,13 @@ class UserController extends Controller
     return redirect()->route('user.profile');
   }
 
+
+
   public function getSignin() {
     return view('user.signin');
   }
+
+
 
   public function postSignin() {
     $signinInfo = request()->validate([
@@ -62,6 +70,9 @@ class UserController extends Controller
     return redirect()->back();
   }
 
+
+
+
   public function getProfile() {
     $orders = \Auth::user()->orders;
     $orders->transform(function($order, $key){
@@ -70,6 +81,9 @@ class UserController extends Controller
     });
     return view('user.profile', compact('orders'));
   }
+
+
+
 
   public function getLogout() {
     \Auth::logout();

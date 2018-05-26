@@ -14,12 +14,14 @@ class ProductController extends Controller
   public function __construct() {
     $this->middleware('auth', ['only' => ['getCheckout', 'postCheckout']]);
   }
+
   public function getIndex() {
     $products = \App\Product::all();
     return view('shop.index', compact('products')); 
   }
 
   public function getAddToCart(Request $request, $id) {
+    
     $product = Product::find($id);
     $oldCart = Session::has('cart') ? Session::get('cart') : null;
     $cart = new Cart($oldCart);
